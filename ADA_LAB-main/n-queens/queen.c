@@ -4,10 +4,8 @@
 int N;
 int *board;
 
-// Function to check whether a queen can be placed safely
 int isSafe(int row, int col) {
     for (int i = 0; i < row; i++) {
-        // Check same column or diagonal
         if (board[i] == col ||
             abs(board[i] - col) == abs(i - row)) {
             return 0;
@@ -16,7 +14,6 @@ int isSafe(int row, int col) {
     return 1;
 }
 
-// Function to print the chessboard
 void printSolution() {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
@@ -30,7 +27,6 @@ void printSolution() {
     printf("\n");
 }
 
-// Backtracking function
 void solveNQueens(int row) {
     if (row == N) {
         printSolution();
