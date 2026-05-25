@@ -3,7 +3,7 @@
 
 #define V 5
 
-// Function to find the vertex with minimum distance
+
 int minDistance(int dist[], int visited[]) {
     int min = INT_MAX, minIndex;
 
@@ -17,12 +17,10 @@ int minDistance(int dist[], int visited[]) {
     return minIndex;
 }
 
-// Dijkstra's Algorithm
 void dijkstra(int graph[V][V], int src) {
     int dist[V];
     int visited[V];
 
-    // Initialize distances and visited array
     for (int i = 0; i < V; i++) {
         dist[i] = INT_MAX;
         visited[i] = 0;
@@ -30,15 +28,12 @@ void dijkstra(int graph[V][V], int src) {
 
     dist[src] = 0;
 
-    // Find shortest path for all vertices
     for (int count = 0; count < V - 1; count++) {
 
-        // Pick minimum distance vertex
         int u = minDistance(dist, visited);
 
         visited[u] = 1;
 
-        // Update distances of adjacent vertices
         for (int v = 0; v < V; v++) {
 
             if (!visited[v] &&
@@ -51,7 +46,6 @@ void dijkstra(int graph[V][V], int src) {
         }
     }
 
-    // Print shortest distances
     printf("Vertex\tDistance from Source\n");
 
     for (int i = 0; i < V; i++) {
