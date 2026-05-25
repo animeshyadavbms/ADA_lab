@@ -39,24 +39,20 @@ int main()
 {
     int n, W, i;
 
-    // Input number of items
     printf("Enter number of items: ");
     scanf("%d", &n);
 
     int val[n], wt[n];
 
-    // Input values and weights
     for(i = 0; i < n; i++)
     {
         printf("Enter value and weight of item %d: ", i + 1);
         scanf("%d %d", &val[i], &wt[i]);
     }
 
-    // Input knapsack capacity
     printf("Enter capacity of knapsack: ");
     scanf("%d", &W);
 
-    // Display result
     printf("Maximum Profit = %d\n", knapsack(W, wt, val, n));
 
     return 0;
