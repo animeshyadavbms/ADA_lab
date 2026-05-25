@@ -18,7 +18,6 @@ int main() {
         }
     }
 
-    // Calculate indegree of each vertex
     for(i = 0; i < n; i++) {
         for(j = 0; j < n; j++) {
             if(adj[i][j] == 1) {
@@ -27,14 +26,12 @@ int main() {
         }
     }
 
-    // Add vertices with indegree 0 to queue
     for(i = 0; i < n; i++) {
         if(indegree[i] == 0) {
             queue[++rear] = i;
         }
     }
 
-    // Process queue
     while(front <= rear) {
         int v = queue[front++];
         topo[count++] = v;
@@ -49,7 +46,6 @@ int main() {
         }
     }
 
-    // Check for cycle
     if(count != n) {
         printf("Graph has a cycle. Topological sorting not possible.\n");
     } else {
